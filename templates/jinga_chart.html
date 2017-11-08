@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://blackrockdigital.github.io/startbootstrap-simple-sidebar/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>20/20 Opioid</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./Simple Sidebar - Start Bootstrap Template_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./Simple Sidebar - Start Bootstrap Template_files/simple-sidebar.css" rel="stylesheet">
+
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+	 
+
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Hispanic', 'Black', 'White', 'Other'],
+          ['2014', 1000, 400, 200, 17],
+          ['2015', 1170, 460, 250, 14],
+          ['2016', 660, 1120, 300, 24],
+          ['2017', 1030, 540, 350, 49]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Mortality by Race',
+            subtitle: 'Source: National Vital Statistics Reports',
+          }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+	  
+    </script>
+	
+	
+</head>
+
+<body>
+
+    <div id="wrapper" class="toggled">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/#">
+                        Data Categories
+                    </a>
+                </li>
+				<li>
+                    <a href="index2.html">Map</a>
+                </li>
+                <li>
+                    <a href="new.html">Ethnicity</a>
+                </li>
+                <li>
+                    <a href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/#">Age Group</a>
+                </li>
+                <li>
+                    <a href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/#">Gender</a>
+                </li>
+                <li>
+                    <a href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/#">Population Density</a>
+                </li>
+               
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>20/20 Opioid</h1>
+                <p>Tracking the Opioid Crisis</p>
+                
+                <a href="https://www.cdc.gov/nchs/data/nvsr/nvsr66/nvsr66_04.pdf" class="btn btn-secondary" id="menu-toggle">Hide Menu</a>
+			</div>
+			<br>
+   
+			<div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+   
+   
+   
+	<!DOCTYPE html>
+					
+           
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="./Simple Sidebar - Start Bootstrap Template_files/jquery.min.js.download"></script>
+    <script src="./Simple Sidebar - Start Bootstrap Template_files/popper.min.js.download"></script>
+    <script src="./Simple Sidebar - Start Bootstrap Template_files/bootstrap.min.js.download"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+
+
+
+</body></html>

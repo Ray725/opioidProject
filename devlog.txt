@@ -1,0 +1,37 @@
+Team Aggressive Machinists: Maria Kogan, Jason Mohabir, Raymond Li
+Project: Work in Progress
+
+From the assignment page:
+     - Separate devlog entries with newlines
+     - Most recent entry at the bottom
+     - Each entry should begin with the following format: firstL -- TIMESTAMP\n
+     - e.g.: topherM -- 1999-12-31 23:59
+
+================2017-10-9================
+
+mariaK -- 17:02
+       - Gained access to a mac
+
+================2017-10-12================
+
+jasonM -- 17:52
+       - Set up basic flask application
+       - Set up repo structure
+       - Began researching Jinga / Flask interface
+raymondL -- 18:07
+       - Set up initial google map
+       - Begin converting data into GeoJSON format to use with google maps API
+      
+================2017-10-19================
+mariaK -- 16:57
+       - set up the basic website using bootstrap
+       - changed config file to Emacs!
+
+================2017-11-02================
+jasonM -- 17:24
+       - Updated GeoJSON
+================2017-11-05================
+mariaK -- 17:44
+       - updated graphs to view to opioid specific data
+       - improved race multi-bar graph by adding the average increases over time
+       - uploaded the analysis section of the webpage

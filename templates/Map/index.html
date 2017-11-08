@@ -1,0 +1,92 @@
+<html>
+
+<head>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.41.0/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+  <div>
+    <div id='map'></div>
+    <div class='map-overlay' id='features'>
+      <h2>Deaths From Opioid Overdose in 2015</h2>
+      <div id='pd'>
+        <p>Hover over a state.</p>
+      </div>
+    </div>
+    <div class='map-overlay' id='legend'></div>
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoicmF5NzI1IiwiYSI6ImNqOTNpeXNjYTNzemgycW1iMTVobjg1ZWoifQ._Zd7XVxCKKSBKwZt9Z2mVw';
+      var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/ray725/cj94zg6wn0ghu2rl5bwnlin5e' // replace this with your style URL
+      });
+
+      map.on('load', function() {
+        var layers = ['5-10', '10-15', '15-20', '20-30', '30-40', '40-50', '50+'];
+        var colors = ['#FFEDA0', '#FED976', '#FEB24C', '#FD8D3C', '#FC4E2A', '#E31A1C', '#BD0026'];
+        for (i = 0; i < layers.length; i++) {
+          var layer = layers[i];
+          var color = colors[i];
+          var item = document.createElement('div');
+          var key = document.createElement('span');
+          key.className = 'legend-key';
+          key.style.backgroundColor = color;
+
+          var value = document.createElement('span');
+          value.innerHTML = layer;
+          item.appendChild(key);
+          item.appendChild(value);
+          legend.appendChild(item);
+          if (i === layers.length - 1) {
+            item.id = "legendDescriptor"
+            item.innerHTML = "Deaths Per 100,000";
+            legend.appendChild(item);
+          }
+        }
+
+        map.addLayer({
+          "id": "state-borders",
+          "type": "line",
+          "source": "us-states-doi7hq",
+          "layout": {},
+          "paint": {
+            "line-color": "#627BC1",
+            "line-width": 5
+          }
+        });
+      });
+
+      // When a click event occurs on a feature in the states layer, open a popup at the
+      // location of the click, with description HTML from its properties.
+      map.on('click', 'state-borders', function(e) {
+        new mapboxgl.Popup()
+          .setLngLat(e.features[0].geometry.coordinates[0])
+          .setHTML(e.features[0].properties.name)
+          .addTo(map);
+      });
+
+      map.on('mousemove', function(e) {
+        var states = map.queryRenderedFeatures(e.point, {
+          layers: ['us-states-doi7hq']
+        });
+
+        if (states.length > 0) {
+          document.getElementById('pd').innerHTML = '<h3><strong>' + states[0].properties.name + ": " + states[0].properties.deaths + " deaths" + '</strong></h3><p><strong><em></strong></em></p>';
+        } else {
+          document.getElementById('pd').innerHTML = '<p>Hover over a state!</p>';
+        }
+      });
+
+      map.getCanvas().style.cursor = 'default';
+
+      map.fitBounds([
+        [-133.2421875, 16.972741],
+        [-47.63671875, 52.696361]
+      ]);
+    </script>
+  </div>
+</body>
+
+</html>

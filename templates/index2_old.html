@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)https://blackrockdigital.github.io/startbootstrap-simple-sidebar/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>20/20 Opioid</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./Simple Sidebar - Start Bootstrap Template_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./Simple Sidebar - Start Bootstrap Template_files/simple-sidebar.css" rel="stylesheet">
+	<style>
+      #map {
+        height: 370px;
+        width: 100%;
+       }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrapper" class="toggled">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/#">
+                        Data Categories
+                    </a>
+                </li>
+				<li>
+                    <a href="index2.html">Map</a>
+                </li>
+                <li>
+                    <a href="new.html">Ethnicity</a>
+                </li>
+                <li>
+                    <a href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/#">Age Group</a>
+                </li>
+                <li>
+                    <a href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/#">Gender</a>
+                </li>
+                <li>
+                    <a href="https://blackrockdigital.github.io/startbootstrap-simple-sidebar/#">Population Density</a>
+                </li>
+               
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1>20/20 Opioid</h1>
+                <p>Tracking the Opioid Crisis</p>
+                
+                <a href="https://www.cdc.gov/nchs/data/nvsr/nvsr66/nvsr66_04.pdf" class="btn btn-secondary" id="menu-toggle">Hide Menu</a>
+			</div>
+			<br>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+	</script>
+	<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQvYKMoXwibIpsLG0DeKa2EHNgiud_rx4&callback=initMap">
+	</script>
+	<!DOCTYPE html>
+					
+           
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="./Simple Sidebar - Start Bootstrap Template_files/jquery.min.js.download"></script>
+    <script src="./Simple Sidebar - Start Bootstrap Template_files/popper.min.js.download"></script>
+    <script src="./Simple Sidebar - Start Bootstrap Template_files/bootstrap.min.js.download"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+
+
+
+</body></html>
